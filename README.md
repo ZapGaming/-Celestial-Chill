@@ -1,6 +1,6 @@
 # Celestial Chill
 
-![Theme Banner]([https://i.imgur.com/your-banner-image-link.png](https://warrayquipsome.github.io/Chillax/Wallpapers/chillax-default.png)) <!-- Optional: Create and link to a cool banner image! -->
+![Theme Banner](https://warrayquipsome.github.io/Chillax/Wallpapers/chillax-default.png)) <!-- Optional: Create and link to a cool banner image! -->
 
 A vibrant, feature-rich Discord theme that merges the aesthetic of **Chillax** with powerful snippets from the **Flashcord community**. It provides a calm, customizable, and visually pleasing experience.
 
