@@ -1,0 +1,136 @@
+/**
+ * @name Celestial Chill
+ * @author Wq (Chillax), Ascellayn (Flashcord), Zap Gaming (Flashcord Community developer)
+ * @version 1.6
+ * @description A stable merge of Flashcord's layout and Chillax's aesthetic, with compatibility fixes and community snippets.
+ * @source https://github.com/warrayquipsome/Chillax
+*/
+
+/*
+======================================================================================
+                            CORE IMPORTS & DEPENDENCIES
+======================================================================================
+*/
+/* --- Chillax Core & Addons --- */
+@import url("https://warrayquipsome.github.io/Chillax/chillax.css");
+@import url("https://mwittrien.github.io/BetterDiscordAddons/Themes/EmojiReplace/base/Microsoft.css");
+@import url("https://mwittrien.github.io/BetterDiscordAddons/Themes/_res/SettingsIcons.css");
+@import url("https://chillax-org.github.io/Discolored/main.css");
+@import url("https://warrayquipsome.github.io/Chillax/Addons/IconPackEdited.css");
+@import url("https://warrayquipsome.github.io/Chillax/Addons/AvatarOnlyMemberList.css");
+@import url("https://warrayquipsome.github.io/Chillax/Addons/FolderRedesign.css");
+@import url("https://raw.githubusercontent.com/DiscordStyles/RadialStatus/refs/heads/deploy/RadialStatus.css");
+@import url("https://warrayquipsome.github.io/Chillax/Addons/FriendGrid.css");
+@import url("https://warrayquipsome.github.io/Chillax/Addons/ColoredLinks.css");
+
+/* --- Snippet Imports --- */
+@import url("https://nspc911.github.io/themes/vencord/BlurrySettingsModal.theme.css");
+
+/* --- Flashcord Core & Fonts --- */
+@import url("https://sirio-network.com/flashcord/rapid-response.css");
+@import url("https://dev.sirio-network.com/flashcord/telemetry/genuine.css?branch=cSID&version=DEV_250207");
+@import url("https://dev.sirio-network.com/seminar/flashcord/sync.css?token=anonymous");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@font-face { font-family: 'Fixedsys Excelsior'; font-weight: normal; font-style: normal; font-display: swap;src: url('https://sirio-network.com/sbin/Fonts/FixedsysExcelsiorIIIb.woff2') format('woff2')}
+
+/*
+======================================================================================
+                          MASTER CUSTOMIZATION VARIABLES
+======================================================================================
+*/
+:root {
+    /* --- Background --- */
+    --background-image: var(--wallpaper);
+    --bg-opacity: 100%;
+    --wallpaper: url("https://warrayquipsome.github.io/Chillax/Wallpapers/chillax-default.png"); /* Reverted to default Chillax background */
+
+    /* --- Fonts --- */
+    --font-name: 'Poppins', 'Roboto', sans-serif;
+    --font-size: 13px;
+
+    /* --- Accent Colors --- */
+    --accentcolor: 251, 84, 84;
+    --accentcolorV2: #fb5454;
+    
+    /* --- Blurry Settings Modal --- */
+    --blrsm-blur-by: 5px;   /* Controls blur radius of settings window */
+    --blrsm-dimmness: 25;   /* Controls background dimness behind settings */
+
+    /* --- Radial Status --- */
+    --rs-online-color: #1df594;
+    --rs-idle-color: #faa61a;
+    --rs-dnd-color: #f04747;
+    --rs-streaming-color: #643da7;
+    --rs-avatar-shape: 50%;
+    --rs-large-width: 4.5px;
+}
+
+/*
+======================================================================================
+                         FLASHCORD STRUCTURAL CODE (STABLE)
+======================================================================================
+*/
+body {
+    --font-primary: var(--font-name); 
+    --font-display: var(--font-name);
+    --font-headline: var(--font-name);
+    --Discord-TitleBar_Size: 36px;
+    --SNDL-Font_Primary: var(--font-name);
+    --SNDL-Font_Monospace: "Fixedsys Excelsior";
+    --SNDL-UI_Border-Radius: 10px; /* Using Chillax radius */
+    --SNDL-Blue: rgba(var(--accentcolor), 0.8);
+    /* Other Flashcord variables below... */
+    --SNDL-UI_Border-Size: 4px; --SNDL-UI_Border-Radius_Alt: 12.5px; --SNDL-UI_Border-Radius_Circle: 6948px; --SNDL-UI_Border-Radius_Square: 2px; --SNDL-UI_Margin: 8px; --SNDL-UI_Padding: 8px; --SNDL-Banner_Text: rgba(255,255,255,0.95); --SNDL-UI_Banner-Shadow: rgb(0,0,0); --SNDL-C_Light-Feather: rgba(255,255,255,0.1); --SNDL-C_Grey-Feather: rgba(100,100,100,0.1); --SNDL-C_Dark-Feather: rgba(0,0,0,0.1); --SNDL-C_Light: rgba(255,255,255,0.5); --SNDL-C_Grey: rgba(100,100,100,0.5); --SNDL-C_Dark: rgba(0,0,0,0.5); --SNDL-C_Light-Heavy: rgba(255,255,255,0.8); --SNDL-C_Grey-Heavy: rgba(100,100,100,0.8); --SNDL-C_Dark-Heavy: rgba(0,0,0,0.8); --SNDL-C_Light-Solid: rgb(255,255,255); --SNDL-C_Grey-Solid: rgb(100,100,100); --SNDL-C_Dark-Solid: rgb(0,0,0); --SNDL-BF_Dark: blur(8px) brightness(0.5); --SNDL-BF_Light: blur(8px) brightness(1.5); --SNDL-C_Secondary: var(--SNDL-C_Grey); --SNDL-C_Secondary-Inverted: var(--SNDL-C_Grey); --SNDL-Transition_Normal: calc(var(--SNDL-Transition_Multiplier, 1) * 250ms); --SNDL-Blur_Normal: calc(var(--SNDL-Blur_Multiplier, 1) * 8px);
+}
+.theme-dark > body { --SNDL-Text: rgba(255,255,255,0.95); --SNDL-Text_Inverted: rgba(0,0,0,0.95); --SNDL-C_Primary: var(--SNDL-C_Dark); --SNDL-C_Tertiary: var(--SNDL-C_Light); }
+.theme-light > body { --SNDL-Text: rgba(0,0,0,0.95); --SNDL-Text_Inverted: rgba(255,255,255,0.95); --SNDL-C_Primary: var(--SNDL-C_Light); --SNDL-C_Tertiary: var(--SNDL-C_Dark); }
+@keyframes SNDL-Fade_In{0%{opacity:0}}
+::-webkit-scrollbar{display:none!important} section[class^=panels_]{border:none!important}
+@property --FCM-TitleBar{syntax:'on | off';inherits:true;initial-value:on} @container FCM-TitleBar style(--FCM-TitleBar: on){.replugged-notice{border-radius:0}[class^=base_]>[class^=bar_]{padding:0;gap:0;justify-content:flex-end;>[class^=title_]{position:relative;margin-right:8px;>[class^=title_]{position:fixed;left:80px;}}>[class^=title_]::before{color:var(--SNDL-Text);font-size:10pt;font-weight:900;opacity:.8;content:"Celestial Chill"}[class^=trailing_]{[class^=recentsIcon_]{position:fixed;left:20px;}[href="https://support.discord.com"],[class^=winButtons_]::before{display:none}[class^=winButtons_]{margin-right:8px;>div{width:24px!important;height:24px!important;border-radius:var(--SNDL-UI_Border-Radius_Circle)!important;transition:background var(--SNDL-Transition_Normal)}}}}}
+@property --FCM-Slide_Chat{syntax:'sndl | legacy | off';inherits:true;initial-value:sndl} @container FCM-Slide_Chat style(--FCM-Slide_Chat: sndl){[class^=content_]>[class^=page_]{translate:calc(-1 * var(--custom-guild-sidebar-width) + var(--custom-guild-list-width) + 36px);width:calc(100% + var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) - 38px);flex:none;transition-property:translate;transition-duration:var(--SNDL-Transition_Normal);z-index:10}[class^=content_]:has(>[class^=sidebar_]:hover) .page_c48ade,[class^=content_]:not(:has(>[style*="--custom-overdrag: 0px;"])):has(>[style^=""]) .page_c48ade,[class^=content_]:has(>[class^=sidebar_][style*="--custom-overdrag:"]):not(:has(>[class^=sidebar_][style*="--custom-overdrag: 0px;"])) .page_c48ade{translate:0}}
+@property --FCM-List_Channels{syntax:'on | off';inherits:true;initial-value:on} @container FCM-List_Channels style(--FCM-List_Channels: on){#channels>ul{padding-bottom:0}#channels{animation:SNDL-Fade_In var(--SNDL-Animation_Slow);--Initial:-1rem}>ul{container:SNDL-ListItem / inline-size;--Enable-Selected_Modifications:0;li{padding:1px 0}a{height:32px;padding:var(--SNDL-UI_Padding)!important;border-radius:var(--SNDL-UI_Border-Radius)!important;justify-content:center}}}
+/* BUG FIX: Settings window modification is turned OFF by default to prevent conflicts with client mods and plugins. */
+@property --FCM-Settings_Window{syntax:'on | off';inherits:true;initial-value:off}[class^=layers_]{container:FCM-Settings_Window / normal}
+@container FCT_CBM (width > 0){[class^=bg_]{background:var(--wallpaper) !important;background-size:cover!important;background-position:center!important}[class^=bg_]::before{content:"";display:block;position:fixed;top:0;width:100vw;height:100vh;backdrop-filter:blur(var(--window-blur,8px)) brightness(.5)}body{--bg-overlay-2:transparent;--bg-overlay-4:transparent;--bg-overlay-chat:transparent;--background-base-lowest:transparent;--background-base-lower:transparent;--background-primary:rgba(22,8,22,.75);--background-secondary:rgba(22,8,22,.25);--bg-base-tertiary:transparent}}
+
+/*
+======================================================================================
+                              CHILLAX AESTHETIC OVERRIDES
+======================================================================================
+*/
+.theme-dark {--background-message-hover:rgba(255,255,255,.055);--header-primary:#fff;--header-secondary:#b9bbbe;--text-normal:#dcddde;--text-muted:#9d9d9d;--channels-default:#8e9297;--interactive-normal:#b9bbbe;--interactive-hover:#dcddde;--interactive-active:#fff;--interactive-muted:#4f545c;--background-primary:transparent;--background-secondary:transparent;--background-tertiary:transparent;--background-accent:rgb(36,36,36);--activity-card-background:transparent;--deprecated-panel-background:transparent}
+.theme-light {--background-message-hover:rgba(0,0,0,.055);--header-primary:#000;--header-secondary:#3f3f3f;--text-normal:#303030;--text-muted:#333;--channels-default:#585b5e;--interactive-normal:#3a3a3a;--interactive-hover:#333;--interactive-active:#000;--interactive-muted:#4f545c;--background-primary:transparent;--background-secondary:transparent;--background-tertiary:transparent;--background-accent:rgb(200,200,200);--activity-card-background:transparent;--deprecated-panel-background:transparent}
+
+/*
+======================================================================================
+                           CUSTOM SNIPPETS & ADDITIONS
+======================================================================================
+*/
+
+/* --- Snippet 1: Special Author Message Styling --- */
+[class^=scrollerInner][aria-label*=support] > [data-author-id="1017176847865352332"]:not(:last-of-type) > :not([class*=hasReply]) { display: none; }
+[class^=scrollerInner][aria-label*=support] > [data-author-id="1017176847865352332"]:last-of-type > :not([class*=hasReply]) { bottom: -12px; left: 16px; margin-top: 6px; border: 2px solid red; border-bottom: unset; border-radius: 8px 8px 0 0; padding-top: 4px; width: calc(100% - 116px); background-color: rgba(91, 15, 15, 0.31); }
+[class^=scrollerInner][aria-label*=support] > [data-author-id="1017176847865352332"]:last-of-type > :not([class*=hasReply]):hover { background-color: rgba(127, 31, 31, 0.63); }
+[class^=scrollerInner][aria-label*=support] > [data-author-id="1017176847865352332"]:last-of-type > :not([class*=hasReply]) > [class^=contents] { position: relative; left: -16px; }
+[class^=scrollerInner][aria-label*=support] > [data-author-id="1017176847865352332"]:last-of-type > :not([class*=hasReply]) > [class^=contents] > [class^=avatar],
+[class^=scrollerInner][aria-label*=support] > [data-author-id="1017176847865352332"]:last-of-type > :not([class*=hasReply]) > [class^=contents] > [class^=header],
+[class^=scrollerInner][aria-label*=support] > [data-author-id="1017176847865352332"]:last-of-type > :not([class*=hasReply]) > [class^=contents] > [class^=markup] > small:last-of-type { display: none; }
+
+/* --- Snippet 2: Vencord Spotify Player Styling --- */
+#vc-spotify-player { --blur-amount: 4px; --normal-bg-colour: var(--bg-overlay-floating, var(--background-base-low, var(--background-secondary-alt))); position: relative; background: linear-gradient(to bottom, transparent 0%, var(--normal-bg-colour) 100%) !important; overflow: hidden; transition: all 0.4s ease-out; }
+#vc-spotify-player > * { filter: drop-shadow(0 0 10px var(--normal-bg-colour)); }
+#vc-spotify-player:hover { --blur-amount: 0px; }
+#vc-spotify-player::before, #vc-spotify-player::after { z-index: -1; content: ""; position: absolute; height: 100%; width: 100%; top: 0; left: 0; transition: all 0.4s ease-out; }
+#vc-spotify-player::before { background: var(--vc-spotify-track-image); background-position: center top; background-size: cover; opacity: 0.5; }
+#vc-spotify-player:hover::before { opacity: 0.7; }
+#vc-spotify-player::after { backdrop-filter: blur(var(--blur-amount)); }
+#vc-spotify-progress-bar > [class^="slider_"] > [class^="bar_"] > [class^="barFill_"] { background-color: white !important; background: var(--vc-spotify-track-image); background-size: 1px 100%; }
+#vc-spotify-progress-bar > [class^="slider_"] > [class^="bar_"] > [class^="barFill_"]::before { content: ""; position: fixed; height: inherit; width: inherit; top: inherit; left: inherit; border-radius: 4px 0 0 4px; backdrop-filter: blur(10px) saturate(4) brightness(1.6); }
+
+/* --- Snippet 3: Channel Icon Styling with Guild Icon --- */
+.iconContainerWithGuildIcon__2ea32 .icon__2894c { margin: 0; width: 20px; height: 20px; background: none !important; }
+.iconContainerWithGuildIcon__2ea32 .icon__2894c > path { filter: drop-shadow(-1px 0 0px var(--background-base-lowest)) drop-shadow(1px 0 0px var(--background-base-lowest)) drop-shadow(0px 1px 0px var(--background-base-lowest)) drop-shadow(0px -1px 0px var(--background-base-lowest)); }
+.iconContainerWithGuildIcon__2ea32 .svg__2338f { position: absolute; top: -6px; left: -10px; overflow: visible !important; width: calc(28px + var(--space-xxs) + var(--space-xxs)); height: calc(28px + var(--space-xxs) + var(--space-xxs)); contain: none; }
+.iconContainerWithGuildIcon__2ea32 .svg__2338f foreignObject { mask: none !important; overflow: hidden !important; border-radius: var(--radius-sm) 0 0 var(--radius-sm) !important; width: calc(28px + var(--space-xxs) + var(--space-xxs)) !important; }
+.iconContainerWithGuildIcon__2ea32 .svg__2338f foreignObject .channelGuildIcon__2894c { position: absolute; top: calc(0px - var(--space-xxs) - var(--space-xxs)); width: calc(28px + var(--space-xxs) + var(--space-xxs)) !important; height: calc(28px + var(--space-xxs) + var(--space-xxs)) !important; mask-image: linear-gradient(to right, black 0%, transparent 100%); border-radius: 0px !important; }
+.modeSelected__2ea32 .iconWithGuildIcon__2ea32 { color: var(--header-primary); }
